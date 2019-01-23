@@ -2,9 +2,9 @@
 
 ## Endpoints
 
-## **GET** 
+# **GET** 
 
-##### All songs from specific day
+## All songs from specific day
 
 `http://domainname.com/radio/getSongs.php`
 
@@ -39,9 +39,9 @@ http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGI
     }
 ]
 ```
-## **POST**
+# **POST**
 
-##### Login User
+## Login User
 
 `http://domainname.com/login.php`
 
@@ -62,7 +62,7 @@ http://domainname.com/radio/login.php
 }
 ```
 
-##### Authorize User
+## Authorize User
 
 `http://domainname.com/runAuth.php`
 
