@@ -1,8 +1,11 @@
 ## zsz2-webapp-api
 
-#### Endpoints
+### Endpoints
 
-**GET** All songs from specific day
+#### **GET** 
+
+###### All songs from specific day
+
 `domainname.com/radio/getSongs.php`
 
 GET parameters:
