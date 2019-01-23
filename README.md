@@ -62,8 +62,6 @@ http://domainname.com/radio/login.php
 }
 ```
 
-## **POST**
-
 ##### Authorize User
 
 `http://domainname.com/runAuth.php`
