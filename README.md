@@ -6,7 +6,7 @@
 
 ##### All songs from specific day
 
-`domainname.com/radio/getSongs.php`
+`http://domainname.com/radio/getSongs.php`
 
 GET parameters:
 - "devicehash" - required
@@ -15,4 +15,4 @@ GET parameters:
 
 ###### EXAMPLE
 
-> domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23
+> http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23
