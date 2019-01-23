@@ -2,7 +2,7 @@
 
 ## Endpoints
 
-### **GET** 
+## **GET** 
 
 ##### All songs from specific day
 
@@ -39,7 +39,7 @@ http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGI
     }
 ]
 ```
-### **POST**
+## **POST**
 
 ##### Login User
 
