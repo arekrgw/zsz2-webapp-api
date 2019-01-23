@@ -1,10 +1,10 @@
-## zsz2-webapp-api
+# zsz2-webapp-api
 
-### Endpoints
+## Endpoints
 
-#### **GET** 
+### **GET** 
 
-###### All songs from specific day
+##### All songs from specific day
 
 `domainname.com/radio/getSongs.php`
 
@@ -13,6 +13,6 @@ GET parameters:
 - "hash" - **required**
 - "date" - **optional** if not set the default is current day
 
-EXAMPLE
+###### EXAMPLE
 
 > domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23
