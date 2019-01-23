@@ -12,3 +12,7 @@ GET parameters:
 - "devicehash" - required
 - "hash" - **required**
 - "date" - **optional** if not set the default is current day
+
+EXAMPLE
+
+> domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23
