@@ -2,6 +2,10 @@
 
 #### Endpoints
 
-Get all songs from specific day
+**GET** All songs from specific day
+`domainname.com/radio/getSongs.php`
 
-`domainname.com/radio/getSongs.php?devicehash=__YOURDEVICEHASH__&hash=**YOURLOGINHASH**&date=**YYYY-MM-DD**`
+GET parameters:
+- devicehash => **required**
+- hash => **required**
+- date => **optional** if not set the default is current day
