@@ -33,6 +33,7 @@
                 $response = array(
                     "hash" => $newHash
                 );
+                
                 $db->dbClose();
                 return $response;
 
