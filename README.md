@@ -61,3 +61,33 @@ http://domainname.com/radio/login.php
     "hash": "y8wttCqKMk1eKRqVUFD7a88EDr5P1eNJAnOjq7Fs1ltH8Oty6T"
 }
 ```
+
+## **POST**
+
+##### Authorize User
+
+`http://domainname.com/runAuth.php`
+
+POST body:
+- "hash" - **required**
+- "fingerprint" - **required**
+
+###### EXAMPLE URL
+
+```
+http://domainname.com/radio/login.php
+```
+
+###### RESPONSE
+```
+{
+    "hash": "y8wttCqKMk1eKRqVUFD7a88EDr5P1eNJAnOjq7Fs1ltH8Oty6T"
+}
+```
+OR
+```
+true
+```
+```
+false
+```
