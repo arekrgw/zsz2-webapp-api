@@ -13,7 +13,7 @@ GET parameters:
 - "hash" - **required**
 - "date" - **optional** - if not set the default is current day
 
-###### EXAMPLE
+###### EXAMPLE URL
 
 ```
 http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23
@@ -48,3 +48,16 @@ http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGI
 POST body:
 - "login" - **required**
 - "password" - **required**
+
+###### EXAMPLE URL
+
+```
+http://domainname.com/radio/login.php
+```
+
+###### RESPONSE
+```
+{
+    "hash": "y8wttCqKMk1eKRqVUFD7a88EDr5P1eNJAnOjq7Fs1ltH8Oty6T"
+}
+```
