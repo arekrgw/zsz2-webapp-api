@@ -84,10 +84,11 @@ http://domainname.com/radio/login.php
     "hash": "y8wttCqKMk1eKRqVUFD7a88EDr5P1eNJAnOjq7Fs1ltH8Oty6T"
 }
 ```
-OR
+###### OR
 ```
 true
 ```
+###### OR
 ```
 false
 ```
