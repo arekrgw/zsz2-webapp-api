@@ -19,7 +19,7 @@ GET parameters:
 http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23
 ```
 
-##### RESPONSE
+###### RESPONSE
 
 ```
 [
