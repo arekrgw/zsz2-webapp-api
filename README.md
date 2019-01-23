@@ -73,7 +73,7 @@ POST body:
 ###### EXAMPLE URL
 
 ```
-http://domainname.com/radio/login.php
+http://domainname.com/radio/runAuth.php
 ```
 
 ###### RESPONSE
