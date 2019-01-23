@@ -9,10 +9,20 @@
 `http://domainname.com/radio/getSongs.php`
 
 GET parameters:
-- "devicehash" - required
+- "devicehash" - **required**
 - "hash" - **required**
-- "date" - **optional** if not set the default is current day
+- "date" - **optional** - if not set the default is current day
 
 ###### EXAMPLE
 
 > `http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23`
+
+### **POST**
+
+##### Login User
+
+`http://domainname.com/login.php`
+
+POST body:
+- "login" - **required**
+- "password" - **required**
