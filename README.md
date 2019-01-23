@@ -14,8 +14,10 @@ GET parameters:
 - "date" - **optional** - if not set the default is current day
 
 ###### EXAMPLE
-``
-```http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23```
+
+```
+http://domainname.com/radio/getSongs.php?devicehash=YOURDEVICEHASH&hash=YOURLOGINHASH&date=2019-01-23
+```
 
 ##### RESPONSE
 
