@@ -1,10 +1,10 @@
 <?php 
-    function userAuth($hash, $fingerprint) {
+    function userAuth($hash, $fingerprint, $returnUid = false) {
         require_once("_database.php");
 
         $db = new DB;
         
-        $searchQuery = "SELECT hash, hash_time FROM devices WHERE hash=:hash AND device_fingerprint=:fingerprint";
+        $searchQuery = "SELECT hash, hash_time, id_device FROM devices WHERE hash=:hash AND device_fingerprint=:fingerprint";
         $searchParams = array(
             "hash" => $hash,
             "fingerprint" => $fingerprint
@@ -13,7 +13,6 @@
 
         if($search->rowCount() == 1){
             $search = $search->fetch(PDO::FETCH_ASSOC);
-
             if($search['hash_time'] < time()){
                 require_once("_generateRandomHash.php");
                 $newHash = generateRandomHash(50);
@@ -30,9 +29,18 @@
 
                 $db->fetchDb($updateHashQuery, $updateHashParams);
 
-                $response = array(
-                    "hash" => $newHash
-                );
+                if($returnUid == true){
+                    $response = array(
+                        "hash" => $newHash,
+                        "DID" => $search['id_device']
+                    );
+                }
+                else{
+                    $response = array(
+                        "hash" => $newHash,
+                    );
+                }
+                
                 
                 $db->dbClose();
                 return $response;
@@ -40,7 +48,12 @@
             }
             else {
                 $db->dbClose();
-                return true;
+                if($returnUid == true){
+                    return array(
+                        "DID" => $search['id_device']
+                    );
+                }
+                else return true;
             }
                 
         }

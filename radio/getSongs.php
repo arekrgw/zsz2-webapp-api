@@ -30,7 +30,7 @@
             //jezeli data jest ustawiona
 
             if(isset($_GET['date'])){
-                $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio JOIN users ON radio.id_user=users.id_user WHERE radio.date <= :date';
+                $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio JOIN devices ON radio.id_device=devices.id_device JOIN users ON devices.id_user=users.id_user WHERE radio.date = :date';
                 $songsParams = array(
                     'date' => $_GET['date']
                 );
@@ -41,7 +41,7 @@
             }
             else { // jezeli nie jest ustawiona
                 $date = date('Y-m-d');
-                $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio JOIN users ON radio.id_user=users.id_user WHERE radio.date <= :date';
+                $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio JOIN devices ON radio.id_device=devices.id_device JOIN users ON devices.id_user=users.id_user WHERE radio.date = :date';
                 $songsParams = array(
                     'date' => $date
                 );

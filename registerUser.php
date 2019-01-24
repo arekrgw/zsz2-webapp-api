@@ -16,14 +16,14 @@ header("Access-Control-Allow-Headers: *");
             $code = $code->fetch(PDO::FETCH_ASSOC);
 
             if($code['code'] == $_POST['code']){
-                $query = 'INSERT INTO admins VALUES (null, :login, :imie, :nazwisko, :email, :password, :latadolaczenia, :type)';
+                $query = 'INSERT INTO users VALUES (null, :login, :imie, :nazwisko, :email, :password, :latadolaczenia, :type)';
                 $params = array(
-                    'login' => $_POST['login'],
-                    'imie' => $_POST['imie'],
-                    'nazwisko' => $_POST['nazwisko'],
-                    'email' => $_POST['email'],
-                    'password' => $_POST['password'],
-                    'latadolaczenia' => $_POST['latadolaczenia'],
+                    'login' => htmlentities($_POST['login']),
+                    'imie' => htmlentities($_POST['imie']),
+                    'nazwisko' => htmlentities($_POST['nazwisko']),
+                    'email' => htmlentities($_POST['email']),
+                    'password' => md5(htmlentities($_POST['password'])),
+                    'latadolaczenia' => htmlentities($_POST['latadolaczenia']),
                     'type' => ''
                 );
                 $db->fetchDb($query, $params);

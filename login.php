@@ -18,8 +18,8 @@ if(
     $findUserQuery = 'SELECT * FROM users WHERE login=:login AND password=:password';
     $params = array(
         "login" => htmlentities($_POST['login']),
-        "password" => htmlentities($_POST['password'])
-        // "password" => hash("sha256", htmlentities($_POST['password']))
+        // "password" => htmlentities($_POST['password'])
+        "password" => md5(htmlentities($_POST['password']))
     );
     $user = $db->fetchDb($findUserQuery, $params);
 
