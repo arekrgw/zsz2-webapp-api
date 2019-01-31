@@ -7,7 +7,7 @@
 
     function checkIfAnnonymous($songsArray) {
         foreach($songsArray as &$song){
-            if($song['annonymous'] == "1"){
+            if($song['annonymous'] == "1" || $song['autor'] == null){
                 $song['autor'] = "Annonyomous";  
             }
             unset($song['annonymous']);
@@ -28,20 +28,19 @@
             $db = new DB;
 
             //jezeli data jest ustawiona
+            $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio LEFT JOIN devices ON radio.id_device=devices.id_device Left JOIN users ON devices.id_user=users.id_user WHERE radio.date <= :date';
 
             if(isset($_GET['date'])){
-                $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio JOIN devices ON radio.id_device=devices.id_device JOIN users ON devices.id_user=users.id_user WHERE radio.date = :date';
+                
                 $songsParams = array(
                     'date' => $_GET['date']
                 );
                 $songsResult = $db->fetchDb($songsQuery, $songsParams)->fetchAll(PDO::FETCH_ASSOC);
-
                 $songs = checkIfAnnonymous($songsResult);
 
             }
             else { // jezeli nie jest ustawiona
                 $date = date('Y-m-d');
-                $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio JOIN devices ON radio.id_device=devices.id_device JOIN users ON devices.id_user=users.id_user WHERE radio.date = :date';
                 $songsParams = array(
                     'date' => $date
                 );
