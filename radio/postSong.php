@@ -6,7 +6,7 @@
 
     if(isset($_POST['url']) && isset($_POST['title']) && isset($_POST['annonymous']) && isset($_POST['hash']) && isset($_POST['devicehash'])) {
         require_once('../_userAuth.php');
-
+        echo $_POST['annonymous'];
         $isAuthorized = userAuth($_POST['hash'], $_POST['devicehash'], true);
 
         if($isAuthorized){
@@ -24,14 +24,22 @@
             );
 
             $db->fetchDb($postSongQuery, $params);
+
+            if($isAuthorized['DID'] && isset($isAuthorized['hash'])) {
+                unset($isAuthorized['DID']);
+                echo json_encode($isAuthorized);
+            }
+            else{
+                echo 1;
+            }
+            $db->dbClose();
+        }
+        else {
+            echo 0;
         }
 
-        if($isAuthorized['DID'] && isset($isAuthorized['hash'])) {
-            unset($isAuthorized['DID']);
-            echo json_encode($isAuthorized);
-        }
-        else{
-            echo true;
-        }
-        $db->dbClose();
+        
+    }
+    else{
+        echo 0;
     }

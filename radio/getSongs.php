@@ -28,7 +28,7 @@
             $db = new DB;
 
             //jezeli data jest ustawiona
-            $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio LEFT JOIN devices ON radio.id_device=devices.id_device Left JOIN users ON devices.id_user=users.id_user WHERE radio.date <= :date';
+            $songsQuery = 'SELECT radio.id_song, radio.url, radio.title, radio.date, radio.annonymous, concat(users.imie, " ", users.nazwisko) as "autor" FROM radio LEFT JOIN devices ON radio.id_device=devices.id_device Left JOIN users ON devices.id_user=users.id_user WHERE radio.date = :date';
 
             if(isset($_GET['date'])){
                 
